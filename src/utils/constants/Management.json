@@ -1,0 +1,48 @@
+{
+  "AppointmentData": [
+    {
+      "appointmentId": 1,
+      "customerPic": "https://lh3.googleusercontent.com/a/ACg8ocI9dcFiFPTXLmTsfhCpnBCkQ3YrLEwt3BtHzqdDLZWzX1A0zDU5=s96-c",
+      "customerName": "Sam",
+      "appointmentTitle": "Need Consultation",
+      "appointmentDescription": "Consultation For Child Take Care",
+      "appointmentFromTime": "10.30 AM",
+      "appointmentToTime": "2.30 AM",
+      "appointmentDate": "12-04-2024",
+      "BookingEmail": "josarun1601@gmail.com",
+      "BookingPhoneNumber": "+91 8012744052"
+    }
+  ],
+  "displayHeadersAppointment": {
+    "appointmentId": "Id",
+    "customerPic": "",
+    "customerName": "Customer",
+    "appointmentTitle": "Booking Name",
+    "appointmentDescription": "Booking Description",
+    "appointmentFromTime": "From Time",
+    "appointmentToTime": "To Time",
+    "BookingEmail": "Email",
+    "BookingPhoneNumber": "Phone Number",
+    "appointmentDate": "Date & Time"
+  },
+  "CategoryOFIssues": [
+    { "name": "in process", "value": "0" },
+    { "name": "assigned", "value": "0" },
+    { "name": "completed", "value": "0" },
+    { "name": "total", "value": "0" }
+  ],
+  "ServicesOfUsers": [
+    { "name": "Kid Care Consultation", "value": "1", "payment": "99" },
+    { "name": "Consulatation For Parents", "value": "1", "payment": "199" },
+    { "name": "Help the Organization", "value": "1", "payment": "259" },
+    { "name": "Photography Event Organzation", "value": "1", "payment": "59" },
+    { "name": "Kid Care Consultation", "value": "2", "payment": "199" },
+    { "name": "Consulatation For Parents", "value": "2", "payment": "79" },
+    { "name": "Help the Organization", "value": "2", "payment": "49" },
+    { "name": "Photography Event Organzation", "value": "2", "payment": "149" },
+    { "name": "Kid Care Consultation", "value": "1", "payment": "249" },
+    { "name": "Consulatation For Parents", "value": "1", "payment": "399" },
+    { "name": "Help the Organization", "value": "1", "payment": "299" },
+    { "name": "Photography Event Organzation", "value": "1", "payment": "199" }
+  ]
+}
