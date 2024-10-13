@@ -34,7 +34,7 @@
       "platforms": {
         "ios": {
           "podspecPath": "H:\\GrabX\\GrabX-s-Chartio\\node_modules\\react-native-reanimated\\RNReanimated.podspec",
-          "version": "3.15.4",
+          "version": "3.15.5",
           "configurations": [],
           "scriptPhases": []
         },
