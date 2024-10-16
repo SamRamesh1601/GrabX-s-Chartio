@@ -50,3 +50,4 @@ coverage/
 jest-test-results.json
 jest.config.js
 .yarnrc.yml
+env.ts
