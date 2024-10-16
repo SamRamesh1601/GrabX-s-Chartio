@@ -31,3 +31,6 @@ google-services.json
 
 # Android Profiling
 *.hprof
+/.yarn/cache
+/.yarn
+/node_modules
