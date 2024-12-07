@@ -1,12 +1,17 @@
 import {Text, StyleSheet} from 'react-native';
 import React from 'react';
-import {Fonts, Theme} from '../utils/Theme';
+import {Fonts, Theme} from '../Util/Theme';
 import {AppTextProps} from './types';
 
-export default function AppText({text, style, ...props}: AppTextProps) {
+export default function AppText({
+  text,
+  children,
+  style,
+  ...props
+}: AppTextProps) {
   return (
     <Text style={[styles.text, style]} {...props}>
-      {text}
+      {children ? children : text}
     </Text>
   );
 }

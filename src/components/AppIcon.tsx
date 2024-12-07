@@ -12,10 +12,16 @@ import SimpleLineIcons from 'react-native-vector-icons/SimpleLineIcons';
 import Feather from 'react-native-vector-icons/Feather';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import Entypo from 'react-native-vector-icons/Entypo';
-import {Fonts} from '../utils/Theme';
 import {AppIconProps} from './types';
+import {Fonts} from '../Util/Theme';
 
-export default function AppIcon({name, style, group = 'Ioni'}: AppIconProps) {
+export default function AppIcon({
+  name,
+  style,
+  group = 'Ioni',
+  size = 0,
+  color = '',
+}: AppIconProps) {
   let IconComponent;
 
   switch (group) {
@@ -60,6 +66,8 @@ export default function AppIcon({name, style, group = 'Ioni'}: AppIconProps) {
   return (
     <IconComponent
       name={name}
+      color={color}
+      size={size}
       style={[style ? style : defaultStyles.iconStyles]}
     />
   );

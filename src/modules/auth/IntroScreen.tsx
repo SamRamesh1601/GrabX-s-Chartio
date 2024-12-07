@@ -9,12 +9,11 @@ import {
   Animated,
   TouchableOpacity,
 } from 'react-native';
-import {Fonts, SCREEN_HEIGHT, SCREEN_WIDTH, Theme} from '../../utils/Theme';
-import AppImage from '../../components/AppImage';
-import {useData} from '../../utils/constants';
-import {AuthRouteParamList} from '../../routes/types';
+import {Fonts, SCREEN_HEIGHT, SCREEN_WIDTH, Theme} from '../../Util/Theme';
+import AppImage from '../../Components/AppImage';
+import {useData} from '../../Util/constants';
 import {DotProps, RenderContentProps} from './types';
-import useNavScreen from '../../hooks/useNavScreen';
+import useNavScreen from '../../Hook/Common/useNavScreen';
 
 export default function IntroScreen() {
   const scrollX = new Animated.Value(0);

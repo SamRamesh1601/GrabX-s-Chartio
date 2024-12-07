@@ -1,31 +1,31 @@
-import {
-  Text,
-  TouchableOpacity,
-  TouchableOpacityProps,
-  TextStyle,
-  Pressable,
-} from 'react-native';
+import {Text, TouchableOpacity, Pressable} from 'react-native';
 import React from 'react';
-import {Fonts, Theme} from '../utils/Theme';
+import {Fonts, Theme} from '../Util/Theme';
 import {AppButtonOpacityProps, AppButtonProps} from './types';
 
 export default function AppButton({
-  title,
+  title = '',
   textStyle = {},
+  children,
+  key = 0,
   ...props
 }: AppButtonProps) {
   return (
-    <Pressable {...props}>
-      <Text
-        style={[
-          {
-            color: Theme.colors.white,
-            fontFamily: Fonts.Bold.monoText,
-          },
-          textStyle,
-        ]}>
-        {title}
-      </Text>
+    <Pressable key={key} {...props}>
+      {!title && children ? (
+        children
+      ) : (
+        <Text
+          style={[
+            {
+              color: Theme.colors.white,
+              fontFamily: Fonts.Bold.monoText,
+            },
+            textStyle,
+          ]}>
+          {title}
+        </Text>
+      )}
     </Pressable>
   );
 }

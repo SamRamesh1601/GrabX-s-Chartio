@@ -1,6 +1,6 @@
 export type RootStackParamList = {
   Auth: undefined;
-  UserHome: undefined;
+  User: undefined;
   Notification: undefined;
   Chats: undefined;
 };

@@ -11,13 +11,13 @@ import {
 } from 'react-native';
 import React from 'react';
 import {NavigationProp, useNavigation} from '@react-navigation/native';
-import {SCREEN_WIDTH, SCREEN_HEIGHT, Theme} from '../../utils/Theme';
-import AppIcon from '../../components/AppIcon';
-import {AuthRouteParamList} from '../../routes/types';
-import {useAppContext} from '../../context/appContext';
-import {AddStorage} from '../../hooks/useStorage';
+import {SCREEN_WIDTH, SCREEN_HEIGHT, Theme} from '../../Util/Theme';
+import AppIcon from '../../Components/AppIcon';
+import {AuthRouteParamList} from '../../Routes/types';
+import {useAppContext} from '../../Context/appContext';
+import {AddStorage} from '../../Hook/Common/useStorage';
 import {AuthValueProps} from './types';
-import useNavScreen from '../../hooks/useNavScreen';
+import useNavScreen from '../../Hook/Common/useNavScreen';
 
 // import {
 //   GoogleSignin,

@@ -1,5 +1,5 @@
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import KEY from '../utils/constants/key.json';
+import KEY from '../../Util/constants/key.json';
 
 export const AddStorage = async (value: any) => {
   try {

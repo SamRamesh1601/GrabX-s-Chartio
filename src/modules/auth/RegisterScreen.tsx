@@ -12,9 +12,9 @@ import {
 } from 'react-native';
 import React, {useRef} from 'react';
 import {NavigationProp, useNavigation} from '@react-navigation/native';
-import AppIcon from '../../components/AppIcon';
+import AppIcon from '../../Components/AppIcon';
 import {RegisterScreenProps} from './types';
-import {AuthRouteParamList} from '../../routes/types';
+import {AuthRouteParamList} from '../../Routes/types';
 // import {
 //   GoogleSignin,
 //   statusCodes,

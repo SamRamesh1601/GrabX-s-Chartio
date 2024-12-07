@@ -1,12 +1,9 @@
-import {ChatRouteParamList} from '../../routes/types';
-
-export interface TinyChatProps {
+export interface RecentChatProps {
   data: any;
-  key: number;
-  handleNaigation: (item: any) => void;
+  callback: (item: any) => void;
 }
 
-export interface TinyPhotoGrapherProps {
+export interface AppStatusComponentProps {
   item: any;
   firstName: string;
   index: number;
@@ -15,4 +12,18 @@ export interface TinyPhotoGrapherProps {
 export interface RenderItemProps {
   item: any;
   index: number;
+}
+
+export interface ChatStateProps {
+  openPopup: boolean;
+  selectedPerson: any | null;
+  phtographerList: any;
+  chatHistoryList: any;
+  chatPreviousHistoryList: any;
+  refreshing: boolean;
+}
+
+export interface HeaderContainerProps {
+  renderList: any[];
+  onClick?: () => void;
 }

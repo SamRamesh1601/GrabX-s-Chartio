@@ -8,9 +8,9 @@ import {
   KeyboardAvoidingView,
 } from 'react-native';
 import {useNavigation, useRoute} from '@react-navigation/native';
-import AppToast, {useToast} from '../../components/AppToast';
-import {SCREEN_HEIGHT, SCREEN_WIDTH} from '../../utils/Theme';
-import useNavScreen from '../../hooks/useNavScreen';
+import {SCREEN_HEIGHT, SCREEN_WIDTH} from '../../Util/Theme';
+import useNavScreen from '../../Hook/Common/useNavScreen';
+import AppToast, {useToast} from '../../Components/AppToast';
 
 export default function ForgetPassword() {
   const navigation = useNavigation();

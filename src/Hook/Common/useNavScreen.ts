@@ -3,7 +3,7 @@ import {
   AuthRouteParamList,
   RootStackParamList,
   UserRouteParamList,
-} from '../routes/types';
+} from '../../Routes/types';
 
 export default function useNavScreen() {
   const authNavigation = useNavigation<NavigationProp<AuthRouteParamList>>();

@@ -1,5 +1,5 @@
 import {Pressable, StyleSheet, Text, ToastAndroid, View} from 'react-native';
-import {Fonts, Theme, SCREEN_WIDTH} from '../utils/Theme';
+import {Fonts, Theme, SCREEN_WIDTH} from '../Util/Theme';
 import React from 'react';
 import AppIcon from './AppIcon';
 import {AppToastProps} from './types';
@@ -48,7 +48,7 @@ export default function AppToast({
     return () => clearTimeout(timer);
   }, [visible]);
 
-  if (!visible) return;
+  if (!visible) return null;
 
   return (
     <View style={styles.container}>

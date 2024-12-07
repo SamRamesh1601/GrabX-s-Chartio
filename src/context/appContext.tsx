@@ -1,6 +1,5 @@
 import React from 'react';
-import {GetStorage} from '../hooks/useStorage';
-import {NativeEventEmitter, NativeModules} from 'react-native';
+import {GetStorage} from '../Hook/Common/useStorage';
 
 interface User {
   name: string;
@@ -11,7 +10,7 @@ interface AppContextType {
   state: User | any | null;
   setState: (userData: User | any) => void;
   useLogout: () => void;
-  authenticated: boolean;
+  isAuthenticated: boolean;
 }
 
 const AppContext = React.createContext<AppContextType | undefined>(undefined);
@@ -27,7 +26,6 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({children}) => {
     setState(null);
   };
 
-  console.log('State Var : ', state);
   React.useEffect(() => {
     const fetchUserData = async () => {
       const userData = await GetStorage();

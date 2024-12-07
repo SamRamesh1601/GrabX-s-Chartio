@@ -1,18 +1,23 @@
 import React from 'react';
+
 import {SafeAreaView} from 'react-native-safe-area-context';
 import {NavigationContainer} from '@react-navigation/native';
-import RouteNavigation from './src/routes';
-import {styles} from './src/utils/CommonStyles';
-import {AuthProvider} from './src/context/appContext';
+import {GestureHandlerRootView} from 'react-native-gesture-handler';
+
+import {Style} from './src/Util/Style';
+import { AuthProvider } from './src/Context/appContext';
+import Routes from './src/Routes';
 
 export default function App() {
   return (
-    <SafeAreaView style={styles.container}>
-      <NavigationContainer>
-        <AuthProvider>
-          <RouteNavigation />
-        </AuthProvider>
-      </NavigationContainer>
-    </SafeAreaView>
+    <GestureHandlerRootView style={Style.WrapperContainer}>
+      <SafeAreaView style={Style.Container}>
+        <NavigationContainer>
+          <AuthProvider>
+            <Routes />
+          </AuthProvider>
+        </NavigationContainer>
+      </SafeAreaView>
+    </GestureHandlerRootView>
   );
 }

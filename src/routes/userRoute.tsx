@@ -1,7 +1,6 @@
-import React from 'react';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import Dashboard from '../modules/common/Dashboard';
 import {UserRouteParamList} from './types';
+import Dashboard from '../Modules/common/Dashboard';
 
 const Stack = createNativeStackNavigator<UserRouteParamList>();
 

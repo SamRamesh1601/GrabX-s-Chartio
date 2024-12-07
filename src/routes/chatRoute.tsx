@@ -1,13 +1,12 @@
-import React from 'react';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {ChatRouteParamList} from './types';
-import {useAppContext} from '../context/appContext';
-import ChatScreen from '../modules/chat';
+import {useAppContext} from '../Context/appContext';
+import ChatScreen from '../Modules/chat';
 
 const Stack = createNativeStackNavigator<ChatRouteParamList>();
 
 export default function ChatRoute() {
-  const {authenticated} = useAppContext();
+  const {isAuthenticated} = useAppContext();
   return (
     <Stack.Navigator
       screenOptions={{

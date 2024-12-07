@@ -1,7 +1,7 @@
 import {View, Text, StyleSheet} from 'react-native';
 import React from 'react';
-import AppIcon from '../../components/AppIcon';
-import {Fonts, Theme} from '../../utils/Theme';
+import AppIcon from '../../Components/AppIcon';
+import {Fonts, Theme} from '../../Util/Theme';
 
 export default function HomeScreen() {
   return (

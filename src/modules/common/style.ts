@@ -1,14 +1,23 @@
 import {StyleSheet} from 'react-native';
-import {Theme} from './Theme';
+import {SCREEN_HEIGHT} from '../../Util/Theme';
 
 export const styles = StyleSheet.create({
-  container: {
+  mainScreenStyle: {
     flex: 1,
-    backgroundColor: Theme.colors.darken,
+    backgroundColor: '#000',
+  },
+  videoContainer: {
+    width: '100%',
+    height: SCREEN_HEIGHT,
+    backgroundColor: '#000',
+  },
+  video: {
+    width: '100%',
+    height: '100%',
   },
   headerProfileContent: {
     width: '100%',
-    paddingHorizontal: 10,
+    paddingHorizontal: 15,
     paddingVertical: 25,
   },
   containerStyleCenter: {
@@ -32,11 +41,8 @@ export const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-  paragraph: {
-    margin: 24,
-    fontSize: 18,
-    fontWeight: 'bold',
-    textAlign: 'center',
+  container: {
+    flex: 1,
   },
   CommentBox: {
     padding: 10,

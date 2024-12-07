@@ -1,26 +1,126 @@
 {
-  "root": "H:\\GrabX\\GrabX-s-Chartio",
-  "reactNativePath": "H:\\GrabX\\GrabX-s-Chartio\\node_modules\\react-native",
+  "root": "C:\\Development\\GrabX-s-Chartio",
+  "reactNativePath": "C:\\Development\\GrabX-s-Chartio\\node_modules\\react-native",
   "reactNativeVersion": "0.75",
   "dependencies": {
     "@react-native-async-storage/async-storage": {
-      "root": "H:\\GrabX\\GrabX-s-Chartio\\node_modules\\@react-native-async-storage\\async-storage",
+      "root": "C:\\Development\\GrabX-s-Chartio\\node_modules\\@react-native-async-storage\\async-storage",
       "name": "@react-native-async-storage/async-storage",
       "platforms": {
         "ios": {
-          "podspecPath": "H:\\GrabX\\GrabX-s-Chartio\\node_modules\\@react-native-async-storage\\async-storage\\RNCAsyncStorage.podspec",
-          "version": "2.0.0",
+          "podspecPath": "C:\\Development\\GrabX-s-Chartio\\node_modules\\@react-native-async-storage\\async-storage\\RNCAsyncStorage.podspec",
+          "version": "2.1.0",
           "configurations": [],
           "scriptPhases": []
         },
         "android": {
-          "sourceDir": "H:\\GrabX\\GrabX-s-Chartio\\node_modules\\@react-native-async-storage\\async-storage\\android",
+          "sourceDir": "C:\\Development\\GrabX-s-Chartio\\node_modules\\@react-native-async-storage\\async-storage\\android",
           "packageImportPath": "import com.reactnativecommunity.asyncstorage.AsyncStoragePackage;",
           "packageInstance": "new AsyncStoragePackage()",
           "buildTypes": [],
           "libraryName": "rnasyncstorage",
           "componentDescriptors": [],
-          "cmakeListsPath": "H:/GrabX/GrabX-s-Chartio/node_modules/@react-native-async-storage/async-storage/android/build/generated/source/codegen/jni/CMakeLists.txt",
+          "cmakeListsPath": "C:/Development/GrabX-s-Chartio/node_modules/@react-native-async-storage/async-storage/android/build/generated/source/codegen/jni/CMakeLists.txt",
+          "cxxModuleCMakeListsModuleName": null,
+          "cxxModuleCMakeListsPath": null,
+          "cxxModuleHeaderName": null,
+          "isPureCxxDependency": false
+        }
+      }
+    },
+    "@react-native-community/netinfo": {
+      "root": "C:\\Development\\GrabX-s-Chartio\\node_modules\\@react-native-community\\netinfo",
+      "name": "@react-native-community/netinfo",
+      "platforms": {
+        "ios": {
+          "podspecPath": "C:\\Development\\GrabX-s-Chartio\\node_modules\\@react-native-community\\netinfo\\react-native-netinfo.podspec",
+          "version": "11.4.1",
+          "configurations": [],
+          "scriptPhases": []
+        },
+        "android": {
+          "sourceDir": "C:\\Development\\GrabX-s-Chartio\\node_modules\\@react-native-community\\netinfo\\android",
+          "packageImportPath": "import com.reactnativecommunity.netinfo.NetInfoPackage;",
+          "packageInstance": "new NetInfoPackage()",
+          "buildTypes": [],
+          "componentDescriptors": [],
+          "cmakeListsPath": "C:/Development/GrabX-s-Chartio/node_modules/@react-native-community/netinfo/android/build/generated/source/codegen/jni/CMakeLists.txt",
+          "cxxModuleCMakeListsModuleName": null,
+          "cxxModuleCMakeListsPath": null,
+          "cxxModuleHeaderName": null,
+          "isPureCxxDependency": false
+        }
+      }
+    },
+    "react-native-device-info": {
+      "root": "C:\\Development\\GrabX-s-Chartio\\node_modules\\react-native-device-info",
+      "name": "react-native-device-info",
+      "platforms": {
+        "ios": {
+          "podspecPath": "C:\\Development\\GrabX-s-Chartio\\node_modules\\react-native-device-info\\RNDeviceInfo.podspec",
+          "version": "14.0.1",
+          "configurations": [],
+          "scriptPhases": []
+        },
+        "android": {
+          "sourceDir": "C:\\Development\\GrabX-s-Chartio\\node_modules\\react-native-device-info\\android",
+          "packageImportPath": "import com.learnium.RNDeviceInfo.RNDeviceInfo;",
+          "packageInstance": "new RNDeviceInfo()",
+          "buildTypes": [],
+          "componentDescriptors": [],
+          "cmakeListsPath": "C:/Development/GrabX-s-Chartio/node_modules/react-native-device-info/android/build/generated/source/codegen/jni/CMakeLists.txt",
+          "cxxModuleCMakeListsModuleName": null,
+          "cxxModuleCMakeListsPath": null,
+          "cxxModuleHeaderName": null,
+          "isPureCxxDependency": false
+        }
+      }
+    },
+    "react-native-gesture-handler": {
+      "root": "C:\\Development\\GrabX-s-Chartio\\node_modules\\react-native-gesture-handler",
+      "name": "react-native-gesture-handler",
+      "platforms": {
+        "ios": {
+          "podspecPath": "C:\\Development\\GrabX-s-Chartio\\node_modules\\react-native-gesture-handler\\RNGestureHandler.podspec",
+          "version": "2.21.2",
+          "configurations": [],
+          "scriptPhases": []
+        },
+        "android": {
+          "sourceDir": "C:\\Development\\GrabX-s-Chartio\\node_modules\\react-native-gesture-handler\\android",
+          "packageImportPath": "import com.swmansion.gesturehandler.RNGestureHandlerPackage;",
+          "packageInstance": "new RNGestureHandlerPackage()",
+          "buildTypes": [],
+          "libraryName": "rngesturehandler_codegen",
+          "componentDescriptors": [
+            "RNGestureHandlerButtonComponentDescriptor",
+            "RNGestureHandlerRootViewComponentDescriptor"
+          ],
+          "cmakeListsPath": "C:/Development/GrabX-s-Chartio/node_modules/react-native-gesture-handler/android/build/generated/source/codegen/jni/CMakeLists.txt",
+          "cxxModuleCMakeListsModuleName": null,
+          "cxxModuleCMakeListsPath": null,
+          "cxxModuleHeaderName": null,
+          "isPureCxxDependency": false
+        }
+      }
+    },
+    "react-native-image-crop-picker": {
+      "root": "C:\\Development\\GrabX-s-Chartio\\node_modules\\react-native-image-crop-picker",
+      "name": "react-native-image-crop-picker",
+      "platforms": {
+        "ios": {
+          "podspecPath": "C:\\Development\\GrabX-s-Chartio\\node_modules\\react-native-image-crop-picker\\RNImageCropPicker.podspec",
+          "version": "0.41.6",
+          "configurations": [],
+          "scriptPhases": []
+        },
+        "android": {
+          "sourceDir": "C:\\Development\\GrabX-s-Chartio\\node_modules\\react-native-image-crop-picker\\android",
+          "packageImportPath": "import com.reactnative.ivpusic.imagepicker.PickerPackage;",
+          "packageInstance": "new PickerPackage()",
+          "buildTypes": [],
+          "componentDescriptors": [],
+          "cmakeListsPath": "C:/Development/GrabX-s-Chartio/node_modules/react-native-image-crop-picker/android/build/generated/source/codegen/jni/CMakeLists.txt",
           "cxxModuleCMakeListsModuleName": null,
           "cxxModuleCMakeListsPath": null,
           "cxxModuleHeaderName": null,
@@ -29,23 +129,50 @@
       }
     },
     "react-native-image-picker": {
-      "root": "H:\\GrabX\\GrabX-s-Chartio\\node_modules\\react-native-image-picker",
+      "root": "C:\\Development\\GrabX-s-Chartio\\node_modules\\react-native-image-picker",
       "name": "react-native-image-picker",
       "platforms": {
         "ios": {
-          "podspecPath": "H:\\GrabX\\GrabX-s-Chartio\\node_modules\\react-native-image-picker\\react-native-image-picker.podspec",
-          "version": "7.1.2",
+          "podspecPath": "C:\\Development\\GrabX-s-Chartio\\node_modules\\react-native-image-picker\\react-native-image-picker.podspec",
+          "version": "7.2.2",
           "configurations": [],
           "scriptPhases": []
         },
         "android": {
-          "sourceDir": "H:\\GrabX\\GrabX-s-Chartio\\node_modules\\react-native-image-picker\\android",
+          "sourceDir": "C:\\Development\\GrabX-s-Chartio\\node_modules\\react-native-image-picker\\android",
           "packageImportPath": "import com.imagepicker.ImagePickerPackage;",
           "packageInstance": "new ImagePickerPackage()",
           "buildTypes": [],
           "libraryName": "RNImagePickerSpec",
           "componentDescriptors": [],
-          "cmakeListsPath": "H:/GrabX/GrabX-s-Chartio/node_modules/react-native-image-picker/android/build/generated/source/codegen/jni/CMakeLists.txt",
+          "cmakeListsPath": "C:/Development/GrabX-s-Chartio/node_modules/react-native-image-picker/android/build/generated/source/codegen/jni/CMakeLists.txt",
+          "cxxModuleCMakeListsModuleName": null,
+          "cxxModuleCMakeListsPath": null,
+          "cxxModuleHeaderName": null,
+          "isPureCxxDependency": false
+        }
+      }
+    },
+    "react-native-pager-view": {
+      "root": "C:\\Development\\GrabX-s-Chartio\\node_modules\\react-native-pager-view",
+      "name": "react-native-pager-view",
+      "platforms": {
+        "ios": {
+          "podspecPath": "C:\\Development\\GrabX-s-Chartio\\node_modules\\react-native-pager-view\\react-native-pager-view.podspec",
+          "version": "6.6.1",
+          "configurations": [],
+          "scriptPhases": []
+        },
+        "android": {
+          "sourceDir": "C:\\Development\\GrabX-s-Chartio\\node_modules\\react-native-pager-view\\android",
+          "packageImportPath": "import com.reactnativepagerview.PagerViewPackage;",
+          "packageInstance": "new PagerViewPackage()",
+          "buildTypes": [],
+          "libraryName": "pagerview",
+          "componentDescriptors": [
+            "RNCViewPagerComponentDescriptor"
+          ],
+          "cmakeListsPath": "C:/Development/GrabX-s-Chartio/node_modules/react-native-pager-view/android/build/generated/source/codegen/jni/CMakeLists.txt",
           "cxxModuleCMakeListsModuleName": null,
           "cxxModuleCMakeListsPath": null,
           "cxxModuleHeaderName": null,
@@ -54,23 +181,23 @@
       }
     },
     "react-native-reanimated": {
-      "root": "H:\\GrabX\\GrabX-s-Chartio\\node_modules\\react-native-reanimated",
+      "root": "C:\\Development\\GrabX-s-Chartio\\node_modules\\react-native-reanimated",
       "name": "react-native-reanimated",
       "platforms": {
         "ios": {
-          "podspecPath": "H:\\GrabX\\GrabX-s-Chartio\\node_modules\\react-native-reanimated\\RNReanimated.podspec",
-          "version": "3.15.5",
+          "podspecPath": "C:\\Development\\GrabX-s-Chartio\\node_modules\\react-native-reanimated\\RNReanimated.podspec",
+          "version": "3.16.3",
           "configurations": [],
           "scriptPhases": []
         },
         "android": {
-          "sourceDir": "H:\\GrabX\\GrabX-s-Chartio\\node_modules\\react-native-reanimated\\android",
+          "sourceDir": "C:\\Development\\GrabX-s-Chartio\\node_modules\\react-native-reanimated\\android",
           "packageImportPath": "import com.swmansion.reanimated.ReanimatedPackage;",
           "packageInstance": "new ReanimatedPackage()",
           "buildTypes": [],
           "libraryName": "rnreanimated",
           "componentDescriptors": [],
-          "cmakeListsPath": "H:/GrabX/GrabX-s-Chartio/node_modules/react-native-reanimated/android/build/generated/source/codegen/jni/CMakeLists.txt",
+          "cmakeListsPath": "C:/Development/GrabX-s-Chartio/node_modules/react-native-reanimated/android/build/generated/source/codegen/jni/CMakeLists.txt",
           "cxxModuleCMakeListsModuleName": null,
           "cxxModuleCMakeListsPath": null,
           "cxxModuleHeaderName": null,
@@ -79,17 +206,17 @@
       }
     },
     "react-native-safe-area-context": {
-      "root": "H:\\GrabX\\GrabX-s-Chartio\\node_modules\\react-native-safe-area-context",
+      "root": "C:\\Development\\GrabX-s-Chartio\\node_modules\\react-native-safe-area-context",
       "name": "react-native-safe-area-context",
       "platforms": {
         "ios": {
-          "podspecPath": "H:\\GrabX\\GrabX-s-Chartio\\node_modules\\react-native-safe-area-context\\react-native-safe-area-context.podspec",
-          "version": "4.11.0",
+          "podspecPath": "C:\\Development\\GrabX-s-Chartio\\node_modules\\react-native-safe-area-context\\react-native-safe-area-context.podspec",
+          "version": "4.14.1",
           "configurations": [],
           "scriptPhases": []
         },
         "android": {
-          "sourceDir": "H:\\GrabX\\GrabX-s-Chartio\\node_modules\\react-native-safe-area-context\\android",
+          "sourceDir": "C:\\Development\\GrabX-s-Chartio\\node_modules\\react-native-safe-area-context\\android",
           "packageImportPath": "import com.th3rdwave.safeareacontext.SafeAreaContextPackage;",
           "packageInstance": "new SafeAreaContextPackage()",
           "buildTypes": [],
@@ -98,7 +225,7 @@
             "RNCSafeAreaProviderComponentDescriptor",
             "RNCSafeAreaViewComponentDescriptor"
           ],
-          "cmakeListsPath": "H:/GrabX/GrabX-s-Chartio/node_modules/react-native-safe-area-context/android/src/main/jni/CMakeLists.txt",
+          "cmakeListsPath": "C:/Development/GrabX-s-Chartio/node_modules/react-native-safe-area-context/android/src/main/jni/CMakeLists.txt",
           "cxxModuleCMakeListsModuleName": null,
           "cxxModuleCMakeListsPath": null,
           "cxxModuleHeaderName": null,
@@ -107,17 +234,17 @@
       }
     },
     "react-native-screens": {
-      "root": "H:\\GrabX\\GrabX-s-Chartio\\node_modules\\react-native-screens",
+      "root": "C:\\Development\\GrabX-s-Chartio\\node_modules\\react-native-screens",
       "name": "react-native-screens",
       "platforms": {
         "ios": {
-          "podspecPath": "H:\\GrabX\\GrabX-s-Chartio\\node_modules\\react-native-screens\\RNScreens.podspec",
-          "version": "3.34.0",
+          "podspecPath": "C:\\Development\\GrabX-s-Chartio\\node_modules\\react-native-screens\\RNScreens.podspec",
+          "version": "4.3.0",
           "configurations": [],
           "scriptPhases": []
         },
         "android": {
-          "sourceDir": "H:\\GrabX\\GrabX-s-Chartio\\node_modules\\react-native-screens\\android",
+          "sourceDir": "C:\\Development\\GrabX-s-Chartio\\node_modules\\react-native-screens\\android",
           "packageImportPath": "import com.swmansion.rnscreens.RNScreensPackage;",
           "packageInstance": "new RNScreensPackage()",
           "buildTypes": [],
@@ -131,9 +258,66 @@
             "RNSScreenStackComponentDescriptor",
             "RNSSearchBarComponentDescriptor",
             "RNSScreenComponentDescriptor",
+            "RNSScreenFooterComponentDescriptor",
+            "RNSScreenContentWrapperComponentDescriptor",
             "RNSModalScreenComponentDescriptor"
           ],
-          "cmakeListsPath": "H:/GrabX/GrabX-s-Chartio/node_modules/react-native-screens/android/src/main/jni/CMakeLists.txt",
+          "cmakeListsPath": "C:/Development/GrabX-s-Chartio/node_modules/react-native-screens/android/src/main/jni/CMakeLists.txt",
+          "cxxModuleCMakeListsModuleName": null,
+          "cxxModuleCMakeListsPath": null,
+          "cxxModuleHeaderName": null,
+          "isPureCxxDependency": false
+        }
+      }
+    },
+    "react-native-svg": {
+      "root": "C:\\Development\\GrabX-s-Chartio\\node_modules\\react-native-svg",
+      "name": "react-native-svg",
+      "platforms": {
+        "ios": {
+          "podspecPath": "C:\\Development\\GrabX-s-Chartio\\node_modules\\react-native-svg\\RNSVG.podspec",
+          "version": "15.10.1",
+          "configurations": [],
+          "scriptPhases": []
+        },
+        "android": {
+          "sourceDir": "C:\\Development\\GrabX-s-Chartio\\node_modules\\react-native-svg\\android",
+          "packageImportPath": "import com.horcrux.svg.SvgPackage;",
+          "packageInstance": "new SvgPackage()",
+          "buildTypes": [],
+          "libraryName": "rnsvg",
+          "componentDescriptors": [
+            "RNSVGCircleComponentDescriptor",
+            "RNSVGClipPathComponentDescriptor",
+            "RNSVGDefsComponentDescriptor",
+            "RNSVGFeBlendComponentDescriptor",
+            "RNSVGFeColorMatrixComponentDescriptor",
+            "RNSVGFeCompositeComponentDescriptor",
+            "RNSVGFeFloodComponentDescriptor",
+            "RNSVGFeGaussianBlurComponentDescriptor",
+            "RNSVGFeMergeComponentDescriptor",
+            "RNSVGFeOffsetComponentDescriptor",
+            "RNSVGFilterComponentDescriptor",
+            "RNSVGEllipseComponentDescriptor",
+            "RNSVGForeignObjectComponentDescriptor",
+            "RNSVGGroupComponentDescriptor",
+            "RNSVGImageComponentDescriptor",
+            "RNSVGLinearGradientComponentDescriptor",
+            "RNSVGLineComponentDescriptor",
+            "RNSVGMarkerComponentDescriptor",
+            "RNSVGMaskComponentDescriptor",
+            "RNSVGPathComponentDescriptor",
+            "RNSVGPatternComponentDescriptor",
+            "RNSVGRadialGradientComponentDescriptor",
+            "RNSVGRectComponentDescriptor",
+            "RNSVGSvgViewAndroidComponentDescriptor",
+            "RNSVGSymbolComponentDescriptor",
+            "RNSVGTextComponentDescriptor",
+            "RNSVGTextPathComponentDescriptor",
+            "RNSVGTSpanComponentDescriptor",
+            "RNSVGUseComponentDescriptor"
+          ],
+          "cmakeListsPath": "C:/Development/GrabX-s-Chartio/node_modules/react-native-svg/android/src/main/jni/CMakeLists.txt",
           "cxxModuleCMakeListsModuleName": null,
           "cxxModuleCMakeListsPath": null,
           "cxxModuleHeaderName": null,
@@ -142,23 +326,23 @@
       }
     },
     "react-native-vector-icons": {
-      "root": "H:\\GrabX\\GrabX-s-Chartio\\node_modules\\react-native-vector-icons",
+      "root": "C:\\Development\\GrabX-s-Chartio\\node_modules\\react-native-vector-icons",
       "name": "react-native-vector-icons",
       "platforms": {
         "ios": {
-          "podspecPath": "H:\\GrabX\\GrabX-s-Chartio\\node_modules\\react-native-vector-icons\\RNVectorIcons.podspec",
+          "podspecPath": "C:\\Development\\GrabX-s-Chartio\\node_modules\\react-native-vector-icons\\RNVectorIcons.podspec",
           "version": "10.2.0",
           "configurations": [],
           "scriptPhases": []
         },
         "android": {
-          "sourceDir": "H:\\GrabX\\GrabX-s-Chartio\\node_modules\\react-native-vector-icons\\android",
+          "sourceDir": "C:\\Development\\GrabX-s-Chartio\\node_modules\\react-native-vector-icons\\android",
           "packageImportPath": "import com.oblador.vectoricons.VectorIconsPackage;",
           "packageInstance": "new VectorIconsPackage()",
           "buildTypes": [],
           "libraryName": "RNVectorIconsSpec",
           "componentDescriptors": [],
-          "cmakeListsPath": "H:/GrabX/GrabX-s-Chartio/node_modules/react-native-vector-icons/android/build/generated/source/codegen/jni/CMakeLists.txt",
+          "cmakeListsPath": "C:/Development/GrabX-s-Chartio/node_modules/react-native-vector-icons/android/build/generated/source/codegen/jni/CMakeLists.txt",
           "cxxModuleCMakeListsModuleName": null,
           "cxxModuleCMakeListsPath": null,
           "cxxModuleHeaderName": null,
@@ -167,22 +351,46 @@
       }
     },
     "react-native-video": {
-      "root": "H:\\GrabX\\GrabX-s-Chartio\\node_modules\\react-native-video",
+      "root": "C:\\Development\\GrabX-s-Chartio\\node_modules\\react-native-video",
       "name": "react-native-video",
       "platforms": {
         "ios": {
-          "podspecPath": "H:\\GrabX\\GrabX-s-Chartio\\node_modules\\react-native-video\\react-native-video.podspec",
-          "version": "6.6.4",
+          "podspecPath": "C:\\Development\\GrabX-s-Chartio\\node_modules\\react-native-video\\react-native-video.podspec",
+          "version": "6.8.2",
           "configurations": [],
           "scriptPhases": []
         },
         "android": {
-          "sourceDir": "H:\\GrabX\\GrabX-s-Chartio\\node_modules\\react-native-video\\android",
+          "sourceDir": "C:\\Development\\GrabX-s-Chartio\\node_modules\\react-native-video\\android",
           "packageImportPath": "import com.brentvatne.react.ReactVideoPackage;",
           "packageInstance": "new ReactVideoPackage()",
           "buildTypes": [],
           "componentDescriptors": [],
-          "cmakeListsPath": "H:/GrabX/GrabX-s-Chartio/node_modules/react-native-video/android/build/generated/source/codegen/jni/CMakeLists.txt",
+          "cmakeListsPath": "C:/Development/GrabX-s-Chartio/node_modules/react-native-video/android/build/generated/source/codegen/jni/CMakeLists.txt",
+          "cxxModuleCMakeListsModuleName": null,
+          "cxxModuleCMakeListsPath": null,
+          "cxxModuleHeaderName": null,
+          "isPureCxxDependency": false
+        }
+      }
+    },
+    "react-native-vision-camera": {
+      "root": "C:\\Development\\GrabX-s-Chartio\\node_modules\\react-native-vision-camera",
+      "name": "react-native-vision-camera",
+      "platforms": {
+        "ios": {
+          "podspecPath": "C:\\Development\\GrabX-s-Chartio\\node_modules\\react-native-vision-camera\\VisionCamera.podspec",
+          "version": "4.6.3",
+          "configurations": [],
+          "scriptPhases": []
+        },
+        "android": {
+          "sourceDir": "C:\\Development\\GrabX-s-Chartio\\node_modules\\react-native-vision-camera\\android",
+          "packageImportPath": "import com.mrousavy.camera.react.CameraPackage;",
+          "packageInstance": "new CameraPackage()",
+          "buildTypes": [],
+          "componentDescriptors": [],
+          "cmakeListsPath": "C:/Development/GrabX-s-Chartio/node_modules/react-native-vision-camera/android/build/generated/source/codegen/jni/CMakeLists.txt",
           "cxxModuleCMakeListsModuleName": null,
           "cxxModuleCMakeListsPath": null,
           "cxxModuleHeaderName": null,
@@ -352,7 +560,7 @@
         {
           "name": "--path <path>",
           "description": "Path to the React Native project root.",
-          "default": "H:\\GrabX\\GrabX-s-Chartio"
+          "default": "C:\\Development\\GrabX-s-Chartio"
         },
         {
           "name": "--platform <string>",
@@ -641,7 +849,7 @@
   ],
   "project": {
     "ios": {
-      "sourceDir": "H:\\GrabX\\GrabX-s-Chartio\\ios",
+      "sourceDir": "C:\\Development\\GrabX-s-Chartio\\ios",
       "xcodeProject": {
         "name": "chartio.xcodeproj",
         "path": ".",
@@ -651,7 +859,7 @@
       "assets": []
     },
     "android": {
-      "sourceDir": "H:\\GrabX\\GrabX-s-Chartio\\android",
+      "sourceDir": "C:\\Development\\GrabX-s-Chartio\\android",
       "appName": "app",
       "packageName": "com.chartio",
       "applicationId": "com.chartio",

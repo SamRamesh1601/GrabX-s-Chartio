@@ -13,9 +13,9 @@ import {
   TouchableOpacity,
 } from 'react-native';
 import React from 'react';
-import { useNavigation } from '@react-navigation/native';
-import AppIcon from '../../components/AppIcon';
-import {SCREEN_WIDTH, SCREEN_HEIGHT} from '../../utils/Theme'
+import {useNavigation} from '@react-navigation/native';
+import AppIcon from '../../Components/AppIcon';
+import {SCREEN_WIDTH, SCREEN_HEIGHT} from '../../Util/Theme';
 
 export default function NotificationScreen() {
   const navigation = useNavigation();
@@ -72,9 +72,9 @@ export default function NotificationScreen() {
             paddingVertical: 12,
             borderRadius: 50,
           }}>
-            {/* MaterialIcons */}
+          {/* MaterialIcons */}
           <AppIcon
-          group={'MatIcon'}
+            group={'MatIcon'}
             style={{
               ...styles.textStyle,
               fontSize: 20,
@@ -105,306 +105,312 @@ export default function NotificationScreen() {
             paddingHorizontal: 10,
             marginTop: 10,
           }}>
-          {Array(6).fill(0).map((item, index) => {
-            return (
-              <View
-                key={index}
-                style={{
-                  padding: 15,
-                  backgroundColor: '#FFF',
-                  shadowColor: '#00F',
-                  flexDirection: 'row',
-                  marginVertical: 5,
-                  justifyContent: 'flex-start',
-                  alignItems: 'flex-start',
-                  elevation: 8,
-                  shadowOffset: {
-                    width: 2,
-                    height: 2,
-                  },
-                  borderRadius: 6,
-                  shadowRadius: 1,
-                  shadowOpacity: 0.5,
-                  columnGap: 25,
-                }}>
+          {Array(6)
+            .fill(0)
+            .map((item, index) => {
+              return (
                 <View
+                  key={index}
                   style={{
-                    width: 58,
-                    height: 58,
-                    marginTop: 5,
-                    position: 'relative',
+                    padding: 15,
+                    backgroundColor: '#FFF',
+                    shadowColor: '#00F',
+                    flexDirection: 'row',
+                    marginVertical: 5,
+                    justifyContent: 'flex-start',
+                    alignItems: 'flex-start',
+                    elevation: 8,
+                    shadowOffset: {
+                      width: 2,
+                      height: 2,
+                    },
+                    borderRadius: 6,
+                    shadowRadius: 1,
+                    shadowOpacity: 0.5,
+                    columnGap: 25,
                   }}>
-                  <Image
-                    source={{ uri: item?.avatarurl}}
-                    style={{
-                      width: '100%',
-                      height: '100%',
-                      borderRadius: 250,
-                      objectFit: 'cover',
-                    }}
-                  />
-                  <AppIcon
-                  group={'MatCom'}
-                    style={{
-                      color: '#FFF',
-                      fontSize: 14,
-                      padding: 8,
-                      borderRadius: 150,
-                      bottom: 0,
-                      right: -10,
-                      position: 'absolute',
-                      backgroundColor: '#000',
-                    }}
-                    name="movie-star"
-                  />
-                </View>
-                <View
-                  style={{
-                    width: '76%',
-                    rowGap: 15,
-                  }}>
-                  <Text
-                    style={{
-                      ...styles.textStyle,
-                      fontFamily: 'Poppins-SemiBold',
-                      fontSize: 15,
-                    }}
-                    numberOfLines={3}>
-                    {item.name}
-                    <Text
-                      style={{
-                        ...styles.textStyle,
-                        fontFamily: 'Poppins-Regular',
-                        fontSize: 15,
-                      }}>
-                      {' '}
-                      {'who you might know, is on shinestar '}
-                    </Text>
-                  </Text>
                   <View
                     style={{
-                      padding: 5,
-                      columnGap: 15,
-                      flexDirection: 'row',
+                      width: 58,
+                      height: 58,
+                      marginTop: 5,
+                      position: 'relative',
                     }}>
-                    <TouchableOpacity
+                    <Image
+                      source={{uri: item?.avatarurl}}
                       style={{
-                        paddingHorizontal: 15,
-                        paddingVertical: 10,
+                        width: '100%',
+                        height: '100%',
+                        borderRadius: 250,
+                        objectFit: 'cover',
+                      }}
+                    />
+                    <AppIcon
+                      group={'MatCom'}
+                      style={{
+                        color: '#FFF',
+                        fontSize: 14,
+                        padding: 8,
+                        borderRadius: 150,
+                        bottom: 0,
+                        right: -10,
+                        position: 'absolute',
                         backgroundColor: '#000',
-                        borderRadius: 4,
-                      }}>
-                      <Text
-                        style={{
-                          ...styles.textStyle,
-                          fontFamily: 'Lexend-Regular',
-                          fontSize: 12,
-                          color: 'white',
-                        }}>
-                        {'Follow'}
-                      </Text>
-                    </TouchableOpacity>
-                    <TouchableOpacity
+                      }}
+                      name="movie-star"
+                    />
+                  </View>
+                  <View
+                    style={{
+                      width: '76%',
+                      rowGap: 15,
+                    }}>
+                    <Text
                       style={{
-                        paddingHorizontal: 15,
-                        paddingVertical: 10,
-                        backgroundColor: '#F00',
-                        borderRadius: 4,
-                      }}>
+                        ...styles.textStyle,
+                        fontFamily: 'Poppins-SemiBold',
+                        fontSize: 15,
+                      }}
+                      numberOfLines={3}>
+                      {item.name}
                       <Text
                         style={{
                           ...styles.textStyle,
-                          fontFamily: 'Lexend-Regular',
-                          fontSize: 12,
-                          color: '#FFF',
+                          fontFamily: 'Poppins-Regular',
+                          fontSize: 15,
                         }}>
-                        {'Report'}
+                        {' '}
+                        {'who you might know, is on shinestar '}
                       </Text>
-                    </TouchableOpacity>
+                    </Text>
+                    <View
+                      style={{
+                        padding: 5,
+                        columnGap: 15,
+                        flexDirection: 'row',
+                      }}>
+                      <TouchableOpacity
+                        style={{
+                          paddingHorizontal: 15,
+                          paddingVertical: 10,
+                          backgroundColor: '#000',
+                          borderRadius: 4,
+                        }}>
+                        <Text
+                          style={{
+                            ...styles.textStyle,
+                            fontFamily: 'Lexend-Regular',
+                            fontSize: 12,
+                            color: 'white',
+                          }}>
+                          {'Follow'}
+                        </Text>
+                      </TouchableOpacity>
+                      <TouchableOpacity
+                        style={{
+                          paddingHorizontal: 15,
+                          paddingVertical: 10,
+                          backgroundColor: '#F00',
+                          borderRadius: 4,
+                        }}>
+                        <Text
+                          style={{
+                            ...styles.textStyle,
+                            fontFamily: 'Lexend-Regular',
+                            fontSize: 12,
+                            color: '#FFF',
+                          }}>
+                          {'Report'}
+                        </Text>
+                      </TouchableOpacity>
+                    </View>
                   </View>
                 </View>
-              </View>
-            );
-          })}
-          {Array(6).fill(0).map((item, index) => {
-            return (
-              <View
-                key={index}
-                style={{
-                  padding: 15,
-                  backgroundColor: '#FFF',
-                  shadowColor: '#000',
-                  flexDirection: 'row',
-                  marginVertical: 5,
-                  justifyContent: 'flex-start',
-                  alignItems: 'center',
-                  elevation: 5,
-                  shadowOffset: {
-                    width: 0,
-                    height: 2,
-                  },
-                  borderRadius: 6,
-                  shadowRadius: 0.5,
-                  shadowOpacity: 2.5,
-                  columnGap: 30,
-                }}>
+              );
+            })}
+          {Array(6)
+            .fill(0)
+            .map((item, index) => {
+              return (
                 <View
+                  key={index}
                   style={{
-                    width: 58,
-                    height: 58,
-                    marginTop: 5,
-                    position: 'relative',
+                    padding: 15,
+                    backgroundColor: '#FFF',
+                    shadowColor: '#000',
+                    flexDirection: 'row',
+                    marginVertical: 5,
+                    justifyContent: 'flex-start',
+                    alignItems: 'center',
+                    elevation: 5,
+                    shadowOffset: {
+                      width: 0,
+                      height: 2,
+                    },
+                    borderRadius: 6,
+                    shadowRadius: 0.5,
+                    shadowOpacity: 2.5,
+                    columnGap: 30,
                   }}>
-                  <Image
-                    source={{ uri : item?.avatarurl}}
+                  <View
                     style={{
-                      width: '100%',
-                      height: '100%',
-                      borderRadius: 250,
-                      objectFit: 'cover',
-                    }}
-                  />
-                  <AppIcon
-                  group={'MatCom'}
+                      width: 58,
+                      height: 58,
+                      marginTop: 5,
+                      position: 'relative',
+                    }}>
+                    <Image
+                      source={{uri: item?.avatarurl}}
+                      style={{
+                        width: '100%',
+                        height: '100%',
+                        borderRadius: 250,
+                        objectFit: 'cover',
+                      }}
+                    />
+                    <AppIcon
+                      group={'MatCom'}
+                      style={{
+                        color: '#FFF',
+                        fontSize: 14,
+                        padding: 8,
+                        borderRadius: 150,
+                        bottom: 0,
+                        right: -10,
+                        position: 'absolute',
+                        backgroundColor: '#000',
+                      }}
+                      name="movie-star"
+                    />
+                  </View>
+                  <View
                     style={{
-                      color: '#FFF',
-                      fontSize: 14,
-                      padding: 8,
-                      borderRadius: 150,
-                      bottom: 0,
-                      right: -10,
-                      position: 'absolute',
-                      backgroundColor: '#000',
-                    }}
-                    name="movie-star"
-                  />
-                </View>
-                <View
-                  style={{
-                    width: '76%',
-                    rowGap: 15,
-                  }}>
-                  <Text
-                    style={{
-                      ...styles.textStyle,
-                      fontFamily: 'Poppins-SemiBold',
-                      fontSize: 15,
-                      lineHeight: 26,
-                    }}
-                    numberOfLines={5}>
-                    {item.name}
+                      width: '76%',
+                      rowGap: 15,
+                    }}>
                     <Text
                       style={{
                         ...styles.textStyle,
-                        fontFamily: 'Poppins-Regular',
+                        fontFamily: 'Poppins-SemiBold',
                         fontSize: 15,
-                      }}>
-                      {' '}
-                      {'and others shared 10 photos with you ❤️😁'}
+                        lineHeight: 26,
+                      }}
+                      numberOfLines={5}>
+                      {item.name}
+                      <Text
+                        style={{
+                          ...styles.textStyle,
+                          fontFamily: 'Poppins-Regular',
+                          fontSize: 15,
+                        }}>
+                        {' '}
+                        {'and others shared 10 photos with you ❤️😁'}
+                      </Text>
                     </Text>
-                  </Text>
+                  </View>
                 </View>
-              </View>
-            );
-          })}
-          {Array(5).fill(0).map((item, index) => {
-            return (
-              <View
-                key={index}
-                style={{
-                  padding: 15,
-                  paddingHorizontal: 15,
-                  backgroundColor: '#FFF',
-                  shadowColor: '#000',
-                  flexDirection: 'row',
-                  marginVertical: 5,
-                  justifyContent: 'space-between',
-                  alignItems: 'center',
-                  elevation: 5,
-                  shadowOffset: {
-                    width: 0,
-                    height: 2,
-                  },
-                  borderRadius: 6,
-                  shadowRadius: 0.5,
-                  shadowOpacity: 2.5,
-                  columnGap: 15,
-                }}>
+              );
+            })}
+          {Array(5)
+            .fill(0)
+            .map((item, index) => {
+              return (
                 <View
+                  key={index}
                   style={{
-                    width: 58,
-                    height: 58,
-                    marginTop: 5,
-                    position: 'relative',
+                    padding: 15,
+                    paddingHorizontal: 15,
+                    backgroundColor: '#FFF',
+                    shadowColor: '#000',
+                    flexDirection: 'row',
+                    marginVertical: 5,
+                    justifyContent: 'space-between',
+                    alignItems: 'center',
+                    elevation: 5,
+                    shadowOffset: {
+                      width: 0,
+                      height: 2,
+                    },
+                    borderRadius: 6,
+                    shadowRadius: 0.5,
+                    shadowOpacity: 2.5,
+                    columnGap: 15,
                   }}>
-                  <Image
-                    source={{ uri: item?.avatarurl}}
+                  <View
                     style={{
-                      width: '100%',
-                      height: '100%',
-                      borderRadius: 250,
-                      objectFit: 'cover',
-                    }}
-                  />
-                  <AppIcon
-                  group={'MatCom'}
+                      width: 58,
+                      height: 58,
+                      marginTop: 5,
+                      position: 'relative',
+                    }}>
+                    <Image
+                      source={{uri: item?.avatarurl}}
+                      style={{
+                        width: '100%',
+                        height: '100%',
+                        borderRadius: 250,
+                        objectFit: 'cover',
+                      }}
+                    />
+                    <AppIcon
+                      group={'MatCom'}
+                      style={{
+                        color: '#FFF',
+                        fontSize: 14,
+                        padding: 8,
+                        borderRadius: 150,
+                        bottom: 0,
+                        right: -10,
+                        position: 'absolute',
+                        backgroundColor: '#000',
+                      }}
+                      name="movie-star"
+                    />
+                  </View>
+                  <View
                     style={{
-                      color: '#FFF',
-                      fontSize: 14,
-                      padding: 8,
-                      borderRadius: 150,
-                      bottom: 0,
-                      right: -10,
-                      position: 'absolute',
-                      backgroundColor: '#000',
-                    }}
-                    name="movie-star"
-                  />
-                </View>
-                <View
-                  style={{
-                    width: '55%',
-                    rowGap: 15,
-                  }}>
-                  <Text
-                    style={{
-                      ...styles.textStyle,
-                      fontFamily: 'Poppins-SemiBold',
-                      fontSize: 13,
-                    }}
-                    numberOfLines={2}>
-                    {item.name}
+                      width: '55%',
+                      rowGap: 15,
+                    }}>
                     <Text
                       style={{
                         ...styles.textStyle,
-                        fontFamily: 'Poppins-Regular',
-                        fontSize: 12,
-                      }}>
-                      {' '}
-                      {'liked your comment ❤️'}
+                        fontFamily: 'Poppins-SemiBold',
+                        fontSize: 13,
+                      }}
+                      numberOfLines={2}>
+                      {item.name}
+                      <Text
+                        style={{
+                          ...styles.textStyle,
+                          fontFamily: 'Poppins-Regular',
+                          fontSize: 12,
+                        }}>
+                        {' '}
+                        {'liked your comment ❤️'}
+                      </Text>
                     </Text>
-                  </Text>
-                </View>
-                <View
-                  style={{
-                    width: 58,
-                    height: 58,
-                  }}>
-                  <Image
-                    source={{
-                      uri:'https://media.istockphoto.com/id/1494319207/photo/clouds-on-the-sky-sunset-weather.webp?s=1024x1024&w=is&k=20&c=GiM8sYBIf82-JP9_3jPObNGyjenEFk5zR8ayA9nEI8o='
-                    }}
+                  </View>
+                  <View
                     style={{
-                      width: '100%',
-                      height: '100%',
-                      borderRadius: 4,
-                      objectFit: 'contain',
-                    }}
-                  />
+                      width: 58,
+                      height: 58,
+                    }}>
+                    <Image
+                      source={{
+                        uri: 'https://media.istockphoto.com/id/1494319207/photo/clouds-on-the-sky-sunset-weather.webp?s=1024x1024&w=is&k=20&c=GiM8sYBIf82-JP9_3jPObNGyjenEFk5zR8ayA9nEI8o=',
+                      }}
+                      style={{
+                        width: '100%',
+                        height: '100%',
+                        borderRadius: 4,
+                        objectFit: 'contain',
+                      }}
+                    />
+                  </View>
                 </View>
-              </View>
-            );
-          })}
+              );
+            })}
         </View>
       </ScrollView>
     </View>
@@ -413,13 +419,13 @@ export default function NotificationScreen() {
 
 const styles = StyleSheet.create({
   HomeScreenStyle: {
-    width : SCREEN_WIDTH,
-    height : SCREEN_HEIGHT,
+    width: SCREEN_WIDTH,
+    height: SCREEN_HEIGHT,
     flex: 1,
     backgroundColor: 'white',
   },
   headerComponent: {
-    width : SCREEN_WIDTH,
+    width: SCREEN_WIDTH,
     paddingHorizontal: 15,
     flexDirection: 'row',
     paddingVertical: 30,

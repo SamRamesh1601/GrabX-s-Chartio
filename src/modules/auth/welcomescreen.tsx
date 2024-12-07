@@ -1,15 +1,15 @@
 import React from 'react';
 import {View, StyleSheet} from 'react-native';
-import {Fonts, SCREEN_HEIGHT, SCREEN_WIDTH, Theme} from '../../utils/Theme';
-import AppImage from '../../components/AppImage';
-import {AppButtonOpacity} from '../../components/AppButton';
-import AppText from '../../components/AppText';
-import {useAppContext} from '../../context/appContext';
-import useNavScreen from '../../hooks/useNavScreen';
+import {Fonts, SCREEN_HEIGHT, SCREEN_WIDTH, Theme} from '../../Util/Theme';
+import AppImage from '../../Components/AppImage';
+import {AppButtonOpacity} from '../../Components/AppButton';
+import AppText from '../../Components/AppText';
+import {useAppContext} from '../../Context/appContext';
+import useNavScreen from '../../Hook/Common/useNavScreen';
 
 export default function WelcomeScreen() {
   const {HandleCommonNavigate, HandleAuthNavigate} = useNavScreen();
-  const {authenticated} = useAppContext();
+  const {isAuthenticated} = useAppContext();
 
   return (
     <View style={styles.container}>
@@ -37,7 +37,7 @@ export default function WelcomeScreen() {
         />
       </View>
       <View style={styles.buttonContainer}>
-        {!authenticated ? (
+        {!isAuthenticated ? (
           <>
             <AppButtonOpacity
               title="Register"
@@ -56,7 +56,7 @@ export default function WelcomeScreen() {
         ) : (
           <AppButtonOpacity
             title="Let's Started"
-            onPress={() => HandleCommonNavigate('UserHome')}
+            onPress={() => HandleCommonNavigate('User')}
             style={styles.loginButton}
             textStyle={styles.loginButtonText}
           />

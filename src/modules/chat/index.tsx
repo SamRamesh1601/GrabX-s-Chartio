@@ -1,455 +1,374 @@
 import {
   FlatList,
   Image,
+  Linking,
+  RefreshControl,
+  StatusBar,
   StyleSheet,
   Text,
+  TextInput,
   TouchableOpacity,
   View,
 } from 'react-native';
 import React from 'react';
-import AppIcon from '../../components/AppIcon';
-import {Fonts, SCREEN_HEIGHT} from '../../utils/Theme';
-import {RenderItemProps, TinyChatProps, TinyPhotoGrapherProps} from './types';
-import AppText from '../../components/AppText';
-import Config from '../../utils/constants/constants_data.json';
-import AppImage from '../../components/AppImage';
+import AppIcon from '../../Components/AppIcon';
+import {Fonts, Theme} from '../../Util/Theme';
+import {HeaderContainerProps, RenderItemProps} from './types';
+import AppEmptyContainer from '../../Components/AppEmptyContainer';
+import {style} from './style';
+import useChat from '../../Hook/Chat/useChat';
+import AppText from '../../Components/AppText';
+import AppButton from '../../Components/AppButton';
+import StatusComponent from '../../Components/Chat/StatusComponent';
+import RecentChat from '../../Components/Chat/RecentChat';
+import AppBottomSheet from '../../Components/AppBottomSheet';
+import useAppBottomSheet from '../../Components/AppBottomSheet/hook';
+import BottomSheet, {BottomSheetScrollView} from '@gorhom/bottom-sheet';
+import AppImage from '../../Components/AppImage';
+import ChatHistory from '../../Components/Chat/ChatHistory';
+import AppToast from '../../Components/AppToast';
+import {HandlePickImage, HandlePickVideo} from '../../Util/function';
+import {ScrollView} from 'react-native-gesture-handler';
+import useNavScreen from '../../Hook/Common/useNavScreen';
 
-const TinyChat = ({data = {}, handleNaigation, key}: TinyChatProps) => {
-  const item = data;
-  if (!item) return;
+const HeaderContainer = ({renderList, onClick}: HeaderContainerProps) => {
   return (
-    <TouchableOpacity
-      key={key}
-      style={{
-        width: '100%',
-        justifyContent: 'center',
-        alignItems: 'center',
-        flexDirection: 'row',
-        borderRadius: 2,
-        marginVertical: 5,
-        padding: 5,
-        paddingHorizontal: 10,
-        backgroundColor: '#111',
-        elevation: 2,
-        shadowColor: '#555',
-        shadowOffset: {
-          width: 0,
-          height: 15,
-        },
-        shadowOpacity: 2,
-        shadowRadius: 1,
+    <FlatList
+      data={renderList}
+      style={style.StatusFlatlistContainer}
+      showsHorizontalScrollIndicator={false}
+      keyExtractor={(item: any, index: number) => index.toString()}
+      horizontal={true}
+      renderItem={({item, index}: RenderItemProps) => {
+        const firstName = item?.name?.split(' ').pop();
+        return (
+          <StatusComponent index={index} firstName={firstName} item={item} />
+        );
       }}
-      onPress={() => handleNaigation(item)}>
-      <View
-        style={{
-          width: '80%',
-          flexDirection: 'row',
-          borderRadius: 10,
-          overflow: 'hidden',
-          alignItems: 'center',
-          justifyContent: 'center',
-        }}>
-        <View
-          style={{
-            position: 'relative',
-            justifyContent: 'center',
-            alignItems: 'center',
-          }}>
-          <AppImage
-            path={item.avatarurl}
-            resizeMode="cover"
-            imageType={'online'}
-            wrapperstyle={{
-              width: 52,
-              height: 52,
-              borderRadius: 50,
-              marginVertical: 5,
-              borderWidth: 2,
-            }}
-          />
-          <View
-            style={{
-              ...styles.containerStyleCenter,
-              // width: 14,
-              position: 'absolute',
-              // height: 15,
-              bottom: '5%',
-              right: 0,
-              borderRadius: 250,
-              borderBottomRightRadius: 5,
-              overflow: 'hidden',
-              backgroundColor: 'F9CEEE',
-              padding: 2,
-              paddingHorizontal: 6,
-            }}>
-            <Text
-              numberOfLines={1}
-              style={{
-                color: '#000',
-                fontFamily: 'Poppins-SemiBold',
-                fontSize: 8,
-                textTransform: 'uppercase',
-              }}>
-              {item.lastCheckOut ? item.lastCheckOut : 'Now'}
-            </Text>
-          </View>
-        </View>
-        <View
-          style={{
-            width: '80%',
-            paddingHorizontal: 10,
-            paddingVertical: 5,
-            rowGap: 10,
-            borderRadius: 10,
-            marginVertical: 5,
-          }}>
-          <Text
-            numberOfLines={1}
-            style={{
-              width: '100%',
-              color: '#F9CEEE',
-              // opacity: 0.7,
-              fontFamily: 'Lexend-SemiBold',
-              fontSize: 15,
-              fontWeight: 400,
-            }}>
-            {item.name}
-          </Text>
-          <Text
-            numberOfLines={2}
-            style={{
-              width: '100%',
-              color: '#FFF',
-              fontFamily: 'Lexend-Regular',
-              fontSize: 12,
-              fontWeight: 400,
-            }}>
-            {item.lastmsg
-              ? item.lastmsg
-              : `Hello this from the greeting to you ,   ${item.name}`}
-          </Text>
-        </View>
-      </View>
-      <View
-        style={{
-          ...styles.containerStyleCenter,
-          paddingVertical: 10,
-          padding: 12,
-          columnGap: 10,
-          backgroundColor: '#8E7AB5',
-          backgroundColor: '#F9CEEE',
-          flexDirection: 'row',
-          borderRadius: 150,
-        }}>
-        <TouchableOpacity>
-          <AppIcon
-            group={'Octi'}
-            style={{
-              ...styles.iconStyle,
-              fontSize: 16,
-              color: 'rgba(5, 5, 5, .7)',
-            }}
-            name="pin"
-          />
-        </TouchableOpacity>
-
-        <TouchableOpacity>
-          <AppIcon
-            group={'MatCom'}
-            style={{
-              ...styles.iconStyle,
-              fontSize: 18,
-              color: 'rgba(5, 5, 5, .7)',
-            }}
-            name="delete-outline"
-          />
-        </TouchableOpacity>
-      </View>
-    </TouchableOpacity>
-  );
-};
-
-const TinyPhotographer = ({item, firstName, index}: TinyPhotoGrapherProps) => {
-  return (
-    <View
-      key={index}
-      style={{
-        ...styles.containerStyleCenter,
-        rowGap: 6,
-        marginHorizontal: 5,
-        alignItems: 'center',
-      }}>
-      <View
-        style={{
-          ...styles.containerStyleCenter,
-          width: 70,
-          height: 70,
-          borderRadius: 150,
-          overflow: 'hidden',
-        }}>
-        <AppImage
-          resizeMode="cover"
-          path={item.avatarurl}
-          imageType={'online'}
-          wrapperstyle={{
-            ...styles.containerStyleCenter,
-            width: '90%',
-            height: '90%',
-            borderRadius: 150,
-          }}
-        />
-      </View>
-      <Text
-        style={{
-          ...styles.textStyle,
-          color: '#F9CEEE',
-          fontSize: 12,
-          opacity: 0.6,
-          fontFamily: 'JetBrainsMono-Regular',
-        }}>
-        {firstName ? firstName[0] : item.name}
-      </Text>
-      <View
-        style={{
-          ...styles.containerStyleCenter,
-          width: 20,
-          height: 20,
-          borderRadius: 150,
-          bottom: '25%',
-          right: 0,
-          position: 'absolute',
-          backgroundColor: 'black',
-        }}>
-        <AppIcon
-          group={'Feat'}
-          style={{
-            color: '#FFB3B3',
-            fontSize: 10,
-          }}
-          name="music"
-        />
-      </View>
-    </View>
+    />
   );
 };
 
 export default function ChatScreen() {
-  const [openPopup, setOpenPopup] = React.useState(false);
-  const [selectedPerson, setSelectedPerson] = React.useState({});
-  //   const handleNaigation = item => {
-  //     setSelectedPerson(item);
-  //     setOpenPopup(true);
-  //   };
+  const {
+    openPopup,
+    selectedPerson,
+    refreshing,
+    phtographerList,
+    chatPreviousHistoryList,
+    chatHistoryList,
+    setState: setChatState,
+    HandleNavigation,
+    HandleRefresh,
+  } = useChat();
 
-  //   const handleClosePopup = () => {
-  //     setSelectedPerson({});
-  //     setOpenPopup(false);
-  //   };
-  const [phtographerList, setPhotographerList] = React.useState(
-    Config.photographers,
+  function OnTest() {
+    console.log('working');
+  }
+  const {HandleCommonNavigate, HandleAuthNavigate} = useNavScreen();
+
+  const {bottomSheetRef, HandleClose, HandleOpen} = useAppBottomSheet();
+
+  const Refresher = (
+    <RefreshControl
+      style={{backgroundColor: Theme.colors.primary}}
+      refreshing={refreshing}
+      onRefresh={HandleRefresh}
+      progressBackgroundColor={Theme.colors.white}
+      colors={['#ff0000', '#00ff00', '#0000ff']}
+    />
   );
-  const [chatHistoryList, setChatHistoryList] = React.useState(
-    Config.photographers,
+
+  const RenderItem = React.useCallback(
+    ({item, index}: RenderItemProps) => (
+      <RecentChat
+        callback={item => {
+          HandleOpen();
+          HandleNavigation(item);
+        }}
+        data={item}
+      />
+    ),
+    [chatHistoryList.length],
   );
-  return (
-    <View
-      style={{
-        flex: 1,
-        backgroundColor: 'black',
-      }}>
-      <View
-        style={{
-          ...styles.ProfileHeaderContainer,
-          flexDirection: 'row',
-          marginTop: 5,
-          paddingVertical: 5,
-          paddingHorizontal: 12,
-        }}>
-        <Text
-          style={{
-            color: '#FFF',
-            fontFamily: Fonts.Bold.monoText,
-            fontSize: 25,
-            fontWeight: 600,
-          }}>
-          Messages
-        </Text>
+
+  const RenderSelectedPerson = () => (
+    <ScrollView style={{flex: 1, position: 'relative'}}>
+      <View style={[style.ChatHistoryHeaders]}>
+        <AppImage
+          path={selectedPerson.image}
+          resizeMode="cover"
+          imageType={'online'}
+          wrapperstyle={style.Logo}
+        />
+        <View style={style.FlexRow}>
+          <AppText
+            numberOfLines={1}
+            text={selectedPerson.name}
+            style={{
+              color: Theme.colors.black,
+            }}
+          />
+          <AppText
+            numberOfLines={1}
+            text={
+              selectedPerson.lastCheckOut ? selectedPerson.lastCheckOut : 'now'
+            }
+            style={{
+              fontSize: Fonts.ModerateScale(12),
+              color: Theme.colors.gray,
+            }}
+          />
+        </View>
         <View
           style={{
-            ...styles.containerStyleCenter,
             flexDirection: 'row',
-            columnGap: 20,
-            padding: 8,
-            paddingHorizontal: 15,
-            backgroundColor: '#252525',
-            borderRadius: 250,
+            backgroundColor: Theme.colors.white,
+            gap: 25,
           }}>
           <AppIcon
-            group={'Octi'}
-            style={{
-              ...styles.iconStyle,
-              fontSize: 20,
-              color: '#FFF',
-            }}
-            name="search"
+            style={style.ChatHistoryIcon}
+            group={'Feat'}
+            name={'message-circle'}
           />
+          <AppIcon
+            style={style.ChatHistoryIcon}
+            group={'Feat'}
+            name={'video'}
+          />
+          <AppIcon
+            style={style.ChatHistoryIcon}
+            group={'Feat'}
+            name={'headphones'}
+          />
+        </View>
+      </View>
+      <FlatList
+        data={[
+          ...chatPreviousHistoryList,
+          ...chatPreviousHistoryList,
+          ...chatPreviousHistoryList,
+        ]}
+        style={{flex: 1}}
+        scrollEventThrottle={16}
+        inverted
+        stickyHeaderIndices={[1]}
+        contentContainerStyle={{
+          paddingVertical: 15,
+        }}
+        ListEmptyComponent={<AppEmptyContainer />}
+        showsVerticalScrollIndicator={false}
+        keyExtractor={(item: any, index: number) =>
+          item.id.toString() || index.toString()
+        }
+        refreshControl={Refresher}
+        renderItem={({item, index}: RenderItemProps) => {
+          const isSentMessage = 'user_1' === item.senderId;
+
+          return (
+            <View
+              style={{
+                width: '100%',
+                paddingHorizontal: 18,
+                paddingVertical: 5,
+              }}>
+              <View
+                style={
+                  isSentMessage
+                    ? messageStyles.sentMessage
+                    : messageStyles.receivedMessage
+                }>
+                {item.image && (
+                  <Image
+                    source={{uri: item.image}}
+                    style={messageStyles.image}
+                  />
+                )}
+                <AppText style={messageStyles.messageText}>{item.text}</AppText>
+              </View>
+            </View>
+          );
+        }}
+      />
+      <View style={style.textInputContainer}>
+        <TouchableOpacity>
+          <AppIcon name="happy-outline" size={30} color={Theme.colors.black} />
+        </TouchableOpacity>
+        <TextInput
+          style={[style.textInput]}
+          placeholder="Message"
+          placeholderTextColor="#FFF"
+          value={'Messages'}
+        />
+        <View
+          style={{
+            flexDirection: 'row',
+            columnGap: 15,
+            paddingVertical: 5,
+          }}>
+          <TouchableOpacity onPress={HandlePickImage}>
+            <AppIcon
+              name="image-outline"
+              size={30}
+              color={Theme.colors.black}
+            />
+          </TouchableOpacity>
+          <TouchableOpacity onPress={HandlePickVideo}>
+            <AppIcon
+              name="videocam-outline"
+              size={30}
+              color={Theme.colors.black}
+            />
+          </TouchableOpacity>
           <TouchableOpacity>
             <AppIcon
-              group={'Octi'}
-              style={{
-                ...styles.iconStyle,
-                fontSize: 20,
-                color: 'rgba(244, 244, 244, .5)',
-              }}
-              name="bell"
+              group={'Feat'}
+              name="send"
+              size={30}
+              color={Theme.colors.secondary}
             />
           </TouchableOpacity>
         </View>
       </View>
-      <View
-        style={{
-          width: '100%',
-        }}>
-        <View
-          style={{
-            width: '100%',
-            alignItems: 'center',
-            paddingVertical: 10,
-            rowGap: 15,
-            columnGap: 15,
-            flexDirection: 'row',
-          }}>
-          <FlatList
-            data={phtographerList}
-            style={{
-              width: '100%',
-              columnGap: 25,
-            }}
-            showsHorizontalScrollIndicator={false}
-            keyExtractor={(item: any, index: number) => index.toString()}
-            horizontal={true}
-            renderItem={({item, index}: RenderItemProps) => {
-              const firstName = item?.name?.split(' ');
-              return (
-                <TinyPhotographer
-                  key={index}
-                  index={index}
-                  firstName={firstName}
-                  item={item}
-                />
-              );
-            }}
-          />
-        </View>
-        <View
-          style={{
-            width: '100%',
-          }}>
-          {Array.isArray(chatHistoryList) && chatHistoryList.length !== 0 ? (
-            <View
-              style={{
-                width: '100%',
-              }}>
-              <FlatList
-                data={chatHistoryList}
-                contentContainerStyle={{
-                  paddingHorizontal: 5,
-                }}
-                showsVerticalScrollIndicator={false}
-                keyExtractor={(item: any, index: number) => index.toString()}
-                renderItem={({item, index}: RenderItemProps) => {
-                  function handleNaigation(item: any): void {
-                    throw new Error('Function not implemented.');
-                  }
+    </ScrollView>
+  );
 
-                  return (
-                    <TinyChat
-                      key={index}
-                      handleNaigation={item => handleNaigation(item)}
-                      data={item}
-                    />
-                  );
+  const [showInput, setShowInput] = React.useState(false);
+  return (
+    <View style={style.Container}>
+      <StatusBar animated={true} backgroundColor={Theme.colors.secondary} />
+      <View style={style.HeaderContainer}>
+        <AppText text={'Messages'} style={style.HeaderText} />
+        <View style={style.HeaderLeft}>
+          <AppButton
+            onPress={() => setShowInput(!showInput)}
+            style={style.SearchContainer}>
+            {showInput && (
+              <TextInput
+                value="Search"
+                style={{
+                  padding: 0,
+                  color: '#222',
+                  fontFamily: Fonts.Bold.primary,
                 }}
               />
-              {/* <View
-                  style={{
-                    width: '100%',
-                    marginVertical: 0,
-                  }}></View> */}
-            </View>
-          ) : (
-            <View
-              style={{
-                width: '100%',
-                height: SCREEN_HEIGHT / 1.2,
-                alignItems: 'center',
-              }}>
-              <Image
-                source={{
-                  uri: 'https://cdni.iconscout.com/illustration/premium/thumb/sign-up-4922762-4097209.png',
-                }}
-                style={{
-                  width: '100%',
-                  height: '60%',
-                  objectFit: 'contain',
-                }}
-              />
-              {/* <Text
-                style={{
-                  color: '#EEE',
-                  fontFamily: Fonts.Bold.secondary,
-                  marginBottom: 10,
-                  fontSize: 16,
-                  fontWeight: 600,
-                }}>
-                No Messages
-              </Text> */}
-              <AppText
-                style={{
-                  color: '#888',
-                  fontFamily: Fonts.Bold.monoText,
-                  fontSize: Fonts.ScaleFonts(15),
-                  fontWeight: 600,
-                }}
-                text={'Chat with Mentor or Friends'}
-              />
-            </View>
-          )}
+            )}
+            <AppIcon group={'Octi'} color={Theme.colors.black} name="search" />
+          </AppButton>
+          <AppButton title={''} onPress={OnTest} textStyle={{}}>
+            <AppIcon group={'Octi'} color={Theme.colors.white} name="bell" />
+          </AppButton>
+          <AppButton
+            title={''}
+            onPress={() => HandleCommonNavigate('User')}
+            style={style.HomeIcon}>
+            <AppIcon group={'Octi'} color={Theme.colors.black} name="home" />
+          </AppButton>
         </View>
       </View>
-      {/* {openPopup && selectedPerson && (
-        <ChatHistory
-          openPopup={openPopup}
-          selectedPerson={selectedPerson}
-          goBack={handleClosePopup}
-        />
-      )} */}
+
+      <FlatList
+        data={chatHistoryList}
+        contentContainerStyle={{
+          paddingHorizontal: 5,
+        }}
+        scrollEventThrottle={16}
+        stickyHeaderIndices={[0]}
+        ListHeaderComponent={<HeaderContainer renderList={phtographerList} />}
+        ListEmptyComponent={<AppEmptyContainer />}
+        showsVerticalScrollIndicator={false}
+        keyExtractor={(item: any, index: number) => index.toString()}
+        refreshControl={Refresher}
+        renderItem={RenderItem}
+      />
+      <BottomSheet
+        ref={bottomSheetRef}
+        index={-1}
+        keyboardBehavior={'interactive'}
+        style={[{display: openPopup ? 'flex' : 'none'}, style.FlexContainer]}
+        backgroundStyle={{backgroundColor: Theme.colors.white}}
+        enablePanDownToClose
+        snapPoints={['1%', '50%', '90%']}>
+        <RenderSelectedPerson />
+      </BottomSheet>
     </View>
   );
 }
 
-const styles = StyleSheet.create({
-  ProfileHeaderContainer: {
-    width: '100%',
-    height: '10%',
-    justifyContent: 'space-between',
-    alignItems: 'center',
+/**
+ * Bottom Sheet Implementation
+ */
+
+{
+}
+
+const messageStyles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#000',
   },
-  ProfileSubContainerLeft: {
-    width: '50%',
-    height: '100%',
-    paddingHorizontal: 20,
-    alignItems: 'center',
+  innerContainer: {
+    flex: 1,
   },
-  tinyLogo: {
-    borderRadius: 50,
-    width: 55,
-    height: 55,
+  messagesContainer: {
+    flex: 1,
   },
-  topHeaderIcon: {
+  sentMessage: {
+    alignSelf: 'flex-end',
+    backgroundColor: Theme.colors.lightPrimary,
+    borderRadius: 15,
+    elevation: 0.2,
+    borderBottomRightRadius: 0,
+    paddingVertical: 8,
+    rowGap: 10,
+    paddingHorizontal: 12,
+    maxWidth: '80%',
+  },
+  receivedMessage: {
+    alignSelf: 'flex-start',
+    backgroundColor: Theme.colors.secondary,
+    borderRadius: 15,
+    elevation: 0.2,
+    borderBottomLeftRadius: 0,
+    paddingVertical: 8,
+    rowGap: 10,
+    paddingHorizontal: 12,
+    marginVertical: 5,
+    maxWidth: '80%',
+  },
+  messageText: {
+    color: Theme.colors.black,
+    fontSize: Fonts.ModerateScale(12),
+  },
+  image: {
+    width: 200,
+    height: 200,
+    borderRadius: 15,
+  },
+  video: {
+    width: 200,
+    height: 200,
+    borderRadius: 15,
+  },
+  black: {
+    color: '#222',
+  },
+  white: {
+    color: '#FFF',
+  },
+  scrollToEndButton: {
+    position: 'absolute',
+    bottom: 20,
+    right: 20,
+    backgroundColor: '#6200ea',
+    borderRadius: 25,
+    padding: 10,
     justifyContent: 'center',
     alignItems: 'center',
-    width: 40,
-    height: 40,
+    elevation: 5,
+  },
+  listContentContainer: {
+    marginVertical: 5,
+    rowGap: 5,
   },
 });
